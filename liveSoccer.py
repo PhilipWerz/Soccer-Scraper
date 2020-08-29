@@ -103,8 +103,8 @@ def get_opponent(team):
     # finds matching team out of all teams
     for i, t in enumerate(allTeams):
         t = t.text[1:-1]
-        ratio = SequenceMatcher(None, t, team).ratio()
-        if  ratio > 0.6 and ratio > best_ratio:
+        ratio = SequenceMatcher(None, t.lower(), team.lower()).ratio()
+        if ratio > 0.6 and ratio > best_ratio:
             valid_team = t
             best_ratio = ratio
             pos = i
@@ -119,10 +119,8 @@ def get_opponent(team):
     return opponent
 
 
-
 team = input("Enter a team name: ")
 print("Opponent: " + get_opponent(team) + " | Score: " + get_score(team) + " | Minute: " + get_minute(team))
-
 
 input("Press Enter key to exit... ")
 quit()
