@@ -42,7 +42,7 @@ def get_score(team):
     # finds matching team out of all teams
     for i, t in enumerate(allTeams):
         t = t.text[1:-1]
-        ratio = SequenceMatcher(None, t, team).ratio()
+        ratio = SequenceMatcher(None, t.lower(), team.lower()).ratio()
         if  ratio > 0.55 and ratio > best_ratio:
             valid_team = t
             best_ratio = ratio
@@ -72,7 +72,7 @@ def get_minute(team):
     # finds matching team out of all teams
     for i, t in enumerate(allTeams):
         t = t.text[1:-1]
-        ratio = SequenceMatcher(None, t, team).ratio()
+        ratio = SequenceMatcher(None, t.lower(), team.lower()).ratio()
         if  ratio > 0.55 and ratio > best_ratio:
             valid_team = t
             best_ratio = ratio
