@@ -33,8 +33,7 @@ def get_score(team):
 
     # checks if list is empty
     if not allTeams:
-        print("Momentan spielt kein Team!")
-        quit()
+        return "NP"
 
     best_ratio = 0
     valid_team = team
@@ -63,8 +62,7 @@ def get_minute(team):
 
     # checks if list is empty
     if not allTeams:
-        print("Momentan spielt kein Team!")
-        quit()
+        return "NP"
 
     best_ratio = 0
     valid_team = team
@@ -95,8 +93,7 @@ def get_opponent(team):
 
     # checks if list is empty
     if not allTeams:
-        print("Momentan spielt kein Team!")
-        quit()
+        return "NP"
 
     best_ratio = 0
     valid_team = team
